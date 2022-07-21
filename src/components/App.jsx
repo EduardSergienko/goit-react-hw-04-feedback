@@ -16,7 +16,7 @@ export default function App() {
     neutral,
     bad,
   };
-
+  const optionsName = Object.keys(options);
   const onBtnClick = option => {
     console.log(option);
     switch (option) {
@@ -47,7 +47,7 @@ export default function App() {
     <AppWrap>
       <GlobalStyle />
       <Section title="Please Leave Feedback">
-        <FeedbackOptions options={options} onLeaveFeedback={onBtnClick} />
+        <FeedbackOptions options={optionsName} onLeaveFeedback={onBtnClick} />
       </Section>
       <Section title="Statistic">
         {countTotalFeedback() === 0 ? (

@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
 import { OprionList, Optionbtn } from './feedbackOptions.styled';
 export function FeedbackOptions({ options, onLeaveFeedback }) {
-  const optionsName = Object.keys(options);
   return (
     <OprionList>
-      {optionsName.map(option => {
+      {options.map(option => {
         return (
           <li key={option}>
             <Optionbtn onClick={() => onLeaveFeedback(option)}>
@@ -18,6 +17,6 @@ export function FeedbackOptions({ options, onLeaveFeedback }) {
 }
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.object,
+  options: PropTypes.array,
   onLeaveFeedback: PropTypes.func.isRequired,
 };
